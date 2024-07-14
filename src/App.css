@@ -1,38 +1,162 @@
-.App {
-  text-align: center;
+.App{
+  min-height:100vh ;
+  min-width:100vw ;
+  width: 100vw;
+  height: 100vh;
+  /* background-color: #cf5460; */
+  margin-top: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* #navbar css */
+img{
+  height: 35px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#navbarSupportedContent{
+  display:flex;
+  justify-content: space-between;
+  font-size: larger;
+  margin-left: 10px;
+  
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.nav-link{
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  color: black;
+  margin-right: 50px;
+  font-weight: 800;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-item:hover,.nav-item.active{
+  box-shadow: rgba(0,0,0,0,1);
+  background-color: rgb(135, 127, 127);
+  transition: 2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.search{
+  margin-left: 100px;
+}
+
+.searchBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25%;
+  width: 700px;
+}
+
+
+/* #mainContainer css */
+.mainContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Repeat columns with minimum width of 200px */
+  gap: 20px;
+  padding: 20px;
+  position: relative;
+  background-color:rgb(250, 241, 225);
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.demo{
+  height: 100%;
+  width: 100%;
+   object-fit: cover;
+}
+
+.pin {
+  background-color: wheat;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+   position: relative;
+ }
+
+.pin img {
+  width: 10%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.pin .mainPic{
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+ gap:20px;
+}
+
+.pin-small {
+  grid-row: span 1;
+}
+
+.pin-medium {
+  grid-row: span 2;
+}
+
+.pin-large {
+  grid-row: span 3;
+}
+
+
+
+.mainPic.large {
+  
+  transform: scale(1.5); 
+}
+
+@media (max-width: 768px) {
+  #navbarSupportedContent {
+      flex-direction: column; 
+      align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-link {
+      margin: 10px 0;
   }
+
+  .search {
+      margin-left: 0;
+  }
+
+  .searchBar {
+      width: 100%; 
+  }
+}
+
+@media (max-width: 600px) {
+.navbar {
+  justify-content: flex-start;
+  overflow-x: auto; 
+  overflow-y: hidden; 
+  flex-wrap: nowrap;
+}
+
+.nav-item {
+  padding: 10px 15px; 
+}
+.header {
+  flex-direction: column; 
+  align-items: stretch; 
+}
+
+.search-bar {
+  margin-right: 0; 
+  margin-bottom: 10px; 
+}
+
+.navbar {
+  justify-content: center; 
+}
+
+  .navbar-nav {
+    flex-direction: row; 
+    justify-content: space-around; 
+  }
+
+
 }
